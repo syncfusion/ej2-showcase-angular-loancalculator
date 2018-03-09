@@ -1,0 +1,17 @@
+<div class="row top-space loan-content max-content">
+    <h6 class="center-heading">Amortization Schedule</h6>
+    <ejs-grid #scheduleGrid id='scheduleGrid' [dataSource]='yearWiseData' [childGrid]='childGrid' width="100%" (click)='onClick($event)'>
+        <e-columns>
+            <e-column field='year' headerText='Year' minWidth='80px' textAlign="center">
+                <ng-template #template let-data>
+                    <div class="e-icons e-icon-grightarrow e-row-toggle"></div>
+                    <span style="padding-left: 12px;">{{data.year}}</span>
+                </ng-template>
+            </e-column>
+            <e-column field='yearTotal' headerText='Payment' minWidth='80px' textAlign="center" [format]="format" [hideAtMedia]="paymentHideAtMedia"></e-column>
+            <e-column field='yearPrincipal' headerText='Principal Paid' minWidth='80px' textAlign="center" [format]="format"></e-column>           
+            <e-column field='yearInterest' headerText='Interest Paid' minWidth='80px' textAlign="center" [format]="format"></e-column>
+            <e-column field='endingBalance' headerText='Balance' minWidth='80px' textAlign="center" [format]="format"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>

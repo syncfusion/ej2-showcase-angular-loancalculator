@@ -1,0 +1,8 @@
+<div class="row top-space loan-content max-content">
+    <h6 class="center-heading">Amortization Chart</h6>
+    <div class="col-lg-12 graph-container">
+        <ejs-chart #paymentGraph style='display:block; height: 100%' id='paymentGraph' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [axes]='axes' [tooltip]='tooltip' [chartArea]="chartArea" enableSideBySidePlacement='false'
+            [height]='height' useGroupingSeparator='true' [palettes]='palettes' [legendSettings]='legendSettings' border='#27304c' background="#27304c" [series]="barSeries" (chartMouseUp)='onChartMouseUp($event)' (axisLabelRender)='axisLabelRender($event)'>
+        </ejs-chart>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="col-lg-12 emi-content">
+    <div>
+        <h6 class="emi-header">Break-up of Total Payment</h6>
+    </div>
+    <div class="row">
+        <div class="col-lg-7">
+            <ejs-accumulationchart style="display: block;" #pieChart id="payment_pieChart" enableSmartLabels="true" [legendSettings]="legendSettings" height="365px" [width]="width" [tooltip]="tooltip" border="#27304c" background="#27304c" [series]='pieSeries' (load)='onLoad($event)' (pointRender)="pointRender($event)"></ejs-accumulationchart>
+        </div>
+        <div class="col-lg-5 pie-content" id="pieContent">
+            <div>
+                <p><span class="pie-icon pie-principal"></span>Principal Amount</p>
+                <h5 id="loan_principal">{{principalAmt}}</h5>
+            </div>
+            <div>
+                <p><span class="pie-icon pie-interest"></span>Total Interest</p>
+                <h5 id="loan_interest">{{interestAmt}}</h5>
+            </div>
+            <div class="pie-total">
+                <span>
+                    <p>Total Payment</p>
+                    <p>(Principal + Interest)</p>
+                </span>
+                <h5 id="loan_total_payment">{{totalAmt}}</h5>
+            </div>
+        </div>
+    </div>
+    <div>                
+        <h6 class="emi-footer">Your Monthly Payment</h6>
+        <h1 id="loan_emi">{{emiAmt}}</h1>
+    </div>
+</div>
+
+<svg style="height: 0; display: block; width: 0;">
+    <defs>
+        <linearGradient id="principal_svg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="interest_svg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

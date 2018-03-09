@@ -1,0 +1,67 @@
+<div class="left-content col-lg-12">
+    <div class="row form-space">
+        <div class="col-lg-12">
+            <div class="content-space">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="pricipal">Loan Amount</label>
+                        </td>
+                        <td>
+                            <div class="editor-space">
+                                <ejs-numerictextbox id="principal_txt" [(value)]="principalValue" [min]="principalNumMinValue" [max]="principalNumMaxValue" [step]="principalNumStep" [format]="principalNumFormat" [width]="principalNumWidth" (change)="principalNumChange($event)"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <ejs-slider id='pricipal' [(value)]="principalValue" [min]="principalMinValue" [max]="principalMaxValue" [step]="principalStep" [type]="principalType" [ticks]="principalTicks" (change)="principalChange($event)" (changed)="principalChanged($event)" (renderedTicks)="principalRenderedTicks($event)"></ejs-slider>
+        </div>
+    </div>
+    <div class="row form-space">
+        <div class="col-lg-12">
+            <div class="content-space">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="interestrate">Interest Rate</label>
+                        </td>
+                        <td>
+                            <div class="editor-space">
+                                <ejs-numerictextbox id="interest_txt" [(value)]="interestValue" [min]="interestNumMinValue" [max]="interestNumMaxValue" [step]="interestNumStep" [format]="interestNumFormat" [width]="interestNumWidth" (change)="interestNumChange($event)"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <ejs-slider id='interestrate' [(value)]="interestValue" [min]="interestMinValue" [max]="interestMaxValue" [step]="interestStep" [type]="interestType" [ticks]="interestTicks" (change)="interestChange($event)" (changed)="interestChanged($event)"></ejs-slider>
+        </div>
+    </div>
+    <div class="row form-space">
+        <div class="col-lg-12">
+            <div class="content-space">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="loantenure">Loan Term</label>
+                            <ul class="tenure-value" style="float: left;">
+                                <li>
+                                     <ejs-radiobutton id="radio1" label="Month" name="tenure" value="month" (change)="monthChanged()"></ejs-radiobutton>
+                                </li>
+                                <li>
+                                    <ejs-radiobutton id="radio2" label="Year" name="tenure" value="year" checked="true" [checked]="yearTenure" (change)="yearChanged()"></ejs-radiobutton>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="editor-space">
+                                <ejs-numerictextbox id="loan_txt" [(value)]="loanValue" [min]="loanNumMinValue" [max]="loanNumMaxValue" [step]="loanNumStep" [format]="loanNumFormat" [width]="loanNumWidth" (change)="loanNumChange($event)"></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <ejs-slider id='loantenure' [(value)]="loanValue" [min]="loanMinValue" [max]="loanMaxValue" [step]="loanStep" [type]="loanType" [ticks]="loanTicks" (change)="loanChange($event)" (changed)="loanChanged($event)"></ejs-slider>
+        </div>
+    </div>
+</div>
