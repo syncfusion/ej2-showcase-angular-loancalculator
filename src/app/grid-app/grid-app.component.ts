@@ -26,14 +26,14 @@ export class GridAppComponent implements OnInit {
         dataBound: this.childDataBound,
         queryString: 'year',
         columns: [
-            { field: 'month', headerText: 'Month', textAlign: 'center', minWidth: '80px' },
+            { field: 'month', headerText: 'Month', textAlign: 'Center', minWidth: '80px' },
             {
                 field: 'emi', format: 'C0',
-                hideAtMedia: '(min-width: 480px)', headerText: 'Payment', minWidth: '80px', textAlign: 'center'
+                hideAtMedia: '(min-width: 480px)', headerText: 'Payment', minWidth: '80px', textAlign: 'Center'
             },
-            { field: 'pricipalPaid', format: 'C0', headerText: 'Pricipal Paid', minWidth: '80px', textAlign: 'center' },
-            { field: 'interest', format: 'C0', headerText: 'Interest Paid', minWidth: '80px', textAlign: 'center' },
-            { field: 'endingBalance', format: 'C0', headerText: 'Balance', minWidth: '80px', textAlign: 'center' }
+            { field: 'pricipalPaid', format: 'C0', headerText: 'Pricipal Paid', minWidth: '80px', textAlign: 'Center' },
+            { field: 'interest', format: 'C0', headerText: 'Interest Paid', minWidth: '80px', textAlign: 'Center' },
+            { field: 'endingBalance', format: 'C0', headerText: 'Balance', minWidth: '80px', textAlign: 'Center' }
         ],
         dataSource: this.data.dataUnits
     };
