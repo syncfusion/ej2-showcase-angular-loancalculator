@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { NumericTextBoxComponent, SliderTickRenderedEventArgs } from '@syncfusion/ej2-ng-inputs';
+import { NumericTextBoxComponent, SliderTickRenderedEventArgs } from '@syncfusion/ej2-angular-inputs';
 import { ChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { DataService } from '../../data-service';
 
@@ -79,7 +79,7 @@ export class InputComponent implements OnInit {
     }
 
     public principalRenderedTicks(args: SliderTickRenderedEventArgs): void {
-        let li: NodeListOf<Element> = args.ticksWrapper.getElementsByClassName('e-large');
+        let li: HTMLCollectionBase = args.ticksWrapper.getElementsByClassName('e-large');
         for (let i: number = 0; i < li.length; ++i) {
             let ele: HTMLElement = (li[i].querySelectorAll('.e-tick-value')[0] as HTMLElement);
             let num: number = parseInt(ele.innerText.substring(1).replace(/,/g , ''), 10) / 1000;

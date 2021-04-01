@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { ChangedEventArgs } from '@syncfusion/ej2-ng-calendars';
+import { ChangedEventArgs } from '@syncfusion/ej2-angular-calendars';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
 import { DataService } from '../data-service';
 

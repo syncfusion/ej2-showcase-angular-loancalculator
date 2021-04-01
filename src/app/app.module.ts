@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { NumericTextBoxModule, SliderModule } from '@syncfusion/ej2-ng-inputs';
-import { RadioButtonModule } from '@syncfusion/ej2-ng-buttons';
-import { AccumulationChartModule, ChartModule } from '@syncfusion/ej2-ng-charts';
-import { DatePickerModule } from '@syncfusion/ej2-ng-calendars';
-import { GridModule } from '@syncfusion/ej2-ng-grids';
+import { NumericTextBoxModule, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { AccumulationChartModule, ChartModule } from '@syncfusion/ej2-angular-charts';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
