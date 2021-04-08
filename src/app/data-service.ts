@@ -39,7 +39,7 @@ export class DataService {
     public totalPrincipalYear: number = 0;
     public totalInterestYear: number = 0;
     public inter: number;
-    public dataUnits: [Object] = <[Object]>[];
+    public dataUnits: Object[] = [];
     public dateObj: Date = new Date();
     public totalInterest: number = 0;
     public totalAmount: number = 0;
@@ -47,7 +47,7 @@ export class DataService {
     public endBalance: number;
     public beginBalance: number;
     public yearTotal: number = 0;
-    public monthNames: [string] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    public monthNames: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     public intl: Internationalization = new Internationalization();
 
     public getCurrencyVal(value: number): string {
@@ -182,8 +182,8 @@ export class DataService {
         this.emi = this.calculateEMI();
         this.princ = this.principalValue;
         this.tent = this.yearTenure ? (this.loanValue * 12) : this.loanValue;
-        this.dataUnits = <[Object]>[];
-        this.yearWiseData = <[Object]>[];
+        this.dataUnits = [];
+        this.yearWiseData = [];
         this.dateObj = new Date(this.dateValue.getTime());
         this.totalInterest = 0;
         this.totalAmount = 0;

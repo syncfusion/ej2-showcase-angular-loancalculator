@@ -4,7 +4,7 @@ import { AccumulationChart, AccumulationLegend, PieSeries, AccumulationTooltip,
     Chart, LineSeries, DateTime, Legend, Tooltip, IAccLoadedEventArgs, AccumulationTheme, IAccPointRenderEventArgs,
     StackingColumnSeries, Crosshair, DataLabel, ColumnSeries, IMouseEventArgs, Series
 } from '@syncfusion/ej2-charts';
-import { AccumulationChartComponent } from '@syncfusion/ej2-ng-charts';
+import { AccumulationChartComponent } from '@syncfusion/ej2-angular-charts';
 import { DataService } from '../../data-service';
 AccumulationChart.Inject(AccumulationLegend, PieSeries, AccumulationTooltip, AccumulationDataLabel);
 

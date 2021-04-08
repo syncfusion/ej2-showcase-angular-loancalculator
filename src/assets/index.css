@@ -38,7 +38,7 @@
 
 .component-content {
   border-radius: 3px;
-  height: 300px;
+  height: 100%;
 }
 
 .parent {
@@ -261,6 +261,7 @@ li {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 13px;
+  color: #ABABAB;
 }
 
 .main-content .e-slider-container .e-slider .e-slider-track {
@@ -425,10 +426,7 @@ li {
 
 .main-content .e-grid.e-gridhover tr[role='row']:not(.e-editedrow):hover .e-rowcell:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .main-content .e-grid.e-gridhover tr[role='row']:hover .e-detailrowcollapse:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell), .main-content .e-grid.e-gridhover tr[role='row']:hover .e-detailrowexpand:not(.e-cellselectionbackground):not(.e-active):not(.e-updatedtd):not(.e-indentcell) {
   background: #404D75;
-}
-
-.main-content .e-grid .e-grid .e-headercontent, .main-content .e-grid .e-grid .e-gridcontent .e-emptyrow, .main-content .e-grid .e-grid .e-spinner-pane {
-  display: none;
+  color: #fff;
 }
 
 .main-content .e-grid [aria-selected] + tr .e-detailindentcell {
@@ -800,4 +798,8 @@ body {
 
 .e-grid .e-row .e-row-toggle {
   display: inline-block;
+}
+
+#payment_pieChartPointHover_Border {
+  opacity: 0;
 }

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { closest } from '@syncfusion/ej2-base';
-import { GridComponent } from '@syncfusion/ej2-ng-grids';
+import { GridComponent } from '@syncfusion/ej2-angular-grids';
 import { Grid, DetailRow, DetailDataBoundEventArgs } from '@syncfusion/ej2-grids';
 import { DataService } from '../data-service';
 Grid.Inject(DetailRow);
