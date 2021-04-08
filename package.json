@@ -30,7 +30,6 @@
     "@syncfusion/ej2-angular-charts": "*",
     "@syncfusion/ej2-angular-grids": "*",
     "@syncfusion/ej2-angular-inputs": "*",
-    "@syncfusion/ej2-sample-helpers": "*",
     "gulp": "^3.9.0",
     "gulp-sass": "^3.1.0",
     "run-sequence": "2.2.0",

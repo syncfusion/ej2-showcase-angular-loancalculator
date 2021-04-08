@@ -1,4 +1,4 @@
-require("@syncfusion/ej2-sample-helpers");
+// require("@syncfusion/ej2-sample-helpers");
 
 var fs = require('fs');
 var glob = require('glob');
