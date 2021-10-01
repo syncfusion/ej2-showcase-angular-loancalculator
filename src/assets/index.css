@@ -415,7 +415,7 @@ li {
   background: #313B5A;
 }
 
-.main-content .e-grid .e-icons, .main-content .e-grid .e-rowcell, .main-content .e-grid .e-detailrowcollapse, .main-content .e-grid .e-detailrowexpand {
+.main-content .e-grid .e-icons, .main-content .e-grid .e-row .e-rowcell, .main-content .e-grid .e-detailrowcollapse, .main-content .e-grid .e-detailrowexpand {
   color: #fff;
 }
 

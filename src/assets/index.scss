@@ -486,7 +486,7 @@ li {
       }
     }
 
-    & .e-icons, & .e-rowcell, & .e-detailrowcollapse, & .e-detailrowexpand {
+    & .e-icons, & .e-row .e-rowcell, & .e-detailrowcollapse, & .e-detailrowexpand {
       color: $row-font-color;
     }
 
