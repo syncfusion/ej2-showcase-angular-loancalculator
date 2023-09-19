@@ -3,7 +3,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DataService } from '../data-service';
 
 @Component({
-  selector: 'home-section',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   encapsulation: ViewEncapsulation.None
 })
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     }
 
     @ViewChild('dashboardSection')
-    public dashboard: DashboardComponent;
+    public dashboard!: DashboardComponent;
 
     public ngOnInit(): void {
     }

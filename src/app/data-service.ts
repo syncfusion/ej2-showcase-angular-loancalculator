@@ -31,21 +31,21 @@ export class DataService {
     public principalAmt: string = '';
     public interestAmt: string = '';
     public totalAmt: string = '';
-    public dashboard: DashboardComponent;
+    public dashboard!: DashboardComponent;
 
     public yearTenure: boolean = true;
-    public chart: BarChartComponent;
-    public grid: GridAppComponent;
+    public chart!: BarChartComponent;
+    public grid!: GridAppComponent;
     public totalPrincipalYear: number = 0;
     public totalInterestYear: number = 0;
-    public inter: number;
+    public inter!: number;
     public dataUnits: Object[] = [];
     public dateObj: Date = new Date();
     public totalInterest: number = 0;
     public totalAmount: number = 0;
     public totalPrincipal: number = 0;
-    public endBalance: number;
-    public beginBalance: number;
+    public endBalance!: number;
+    public beginBalance!: number;
     public yearTotal: number = 0;
     public monthNames: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     public intl: Internationalization = new Internationalization();

@@ -10,7 +10,7 @@ Chart.Inject(LineSeries, StackingColumnSeries, DataLabel, ColumnSeries, DateTime
 
 
 @Component({
-  selector: 'chart-section',
+  selector: 'app-chart',
   templateUrl: './bar-chart.component.html',
   encapsulation: ViewEncapsulation.None
 })
@@ -22,7 +22,7 @@ export class BarChartComponent implements OnInit {
     }
 
     @ViewChild('paymentGraph')
-    public chartObj: Chart;
+    public chartObj!: Chart;
 
     // Chart component binding properties
     public primaryXAxis: Object = {
@@ -182,7 +182,7 @@ export class BarChartComponent implements OnInit {
             let index: number = parseInt(id[1], 10);
             let series: Series = this.chartObj.visibleSeries[index];
             let yName: string = series.yAxisName;
-            let ySName: string;
+            let ySName: any;
             let visibility: boolean = false;
             if (series.visible) {
                 for (let i: number = 0, len: number = this.chartObj.series.length; i < len; i++) {

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { NumericTextBoxModule, SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -36,7 +37,8 @@ import { DataService } from './data-service';
     AccumulationChartModule,
     DatePickerModule,
     ChartModule,
-    GridModule
+    GridModule,
+    AppRoutingModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

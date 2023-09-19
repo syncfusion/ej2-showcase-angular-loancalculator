@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     }
 
     @ViewChild('pieChart')
-    public pieChart: AccumulationChartComponent;
+    public pieChart!: AccumulationChartComponent;
 
     // chart binding properties
     public legendSettings: Object = { visible: false };
