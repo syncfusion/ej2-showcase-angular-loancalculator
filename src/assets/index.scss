@@ -897,3 +897,9 @@ body {
 #payment_pieChartPointHover_Border {
   opacity: 0;
 }
+.e-grid .e-detailrowcollapse, .e-grid .e-detailrowexpand{
+  display: table-column;
+}
+.e-grid .e-icon-grightarrow,.e-grid .e-icon-gdownarrow {
+  padding: 0px;
+}

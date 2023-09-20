@@ -1,29 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridAppComponent } from './grid-app/grid-app.component';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
-import { DataService } from './data-service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-    /** Configurations for the Home page */
-    constructor(private data: DataService) {
-    }
-
-    @ViewChild('chartSection')
-    public chart: BarChartComponent;
-    @ViewChild('gridSection')
-    public grid: GridAppComponent;
-
-    public ngOnInit(): void {
-    }
-
-    public ngAfterViewInit(): void {
-      this.data.grid = this.grid;
-      this.data.chart = this.chart;
-    }
+export class AppComponent {
+  title = 'ej2-angular-showcase-template';
 }

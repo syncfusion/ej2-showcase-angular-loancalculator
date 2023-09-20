@@ -6,7 +6,7 @@ import { DataService } from '../data-service';
 Grid.Inject(DetailRow);
 
 @Component({
-  selector: 'grid-section',
+  selector: 'app-grid',
   templateUrl: './grid-app.component.html',
   encapsulation: ViewEncapsulation.None
 })
@@ -18,7 +18,7 @@ export class GridAppComponent implements OnInit {
     }
 
     @ViewChild('scheduleGrid')
-    public grid: Grid;
+    public grid!: Grid;
 
     public yearWiseData: Object[] = this.data.yearWiseData;
     public childGrid: Object = {
@@ -51,20 +51,22 @@ export class GridAppComponent implements OnInit {
     }
     /* tslint:enable */
     public onClick(args: MouseEvent): void {
-        let target: Element = args.target as Element;
-        if (target.classList.contains('e-row-toggle') || target.parentElement.querySelector('.e-row-toggle')) {
-            target = target.parentElement.querySelector('.e-row-toggle') ? target.parentElement.querySelector('.e-row-toggle') : target;
-            if (target.classList.contains('e-icon-gdownarrow')) {
-                target.classList.remove('e-icon-gdownarrow');
-                target.classList.add('e-icon-grightarrow');
-                this.grid.detailRowModule.collapse(parseInt((closest(target, 'tr') as HTMLElement).getAttribute('aria-rowindex'), 10));
-            } else {
-                target.classList.remove('e-icon-grightarrow');
-                target.classList.add('e-icon-gdownarrow');
-                this.grid.detailRowModule.expand(parseInt((closest(target, 'tr') as HTMLElement).getAttribute('aria-rowindex'), 10));
+        const target = args.target as HTMLElement;
+        if (target.classList.contains('e-row-toggle') || target.parentElement?.querySelector('.e-row-toggle')) {
+            const rowElement = closest(target, 'tr') as HTMLElement;
+            const rowIndex = parseInt(rowElement.getAttribute('aria-rowindex') || '', 10);
+            if (rowIndex >= 0) {
+                if (target.classList.contains('e-icon-gdownarrow')) {
+                    target.classList.remove('e-icon-gdownarrow');
+                    target.classList.add('e-icon-grightarrow');
+                    this.grid.detailRowModule.collapse(rowIndex - 1);
+                } else {
+                    target.classList.remove('e-icon-grightarrow');
+                    target.classList.add('e-icon-gdownarrow');
+                    this.grid.detailRowModule.expand(rowIndex - 1);
+                }
             }
-        }
-    }
+        }    }
 
     public ngOnInit(): void {
     }
