@@ -6,9 +6,9 @@ import {
     AccumulationDataLabel, SeriesModel, Chart, LineSeries, DateTime, Legend, Tooltip, IAccLoadedEventArgs, AccumulationTheme, IAccPointRenderEventArgs,
     StackingColumnSeries, Crosshair, DataLabel, ColumnSeries, IMouseEventArgs, Series
 } from '@syncfusion/ej2-charts';
-import { Grid, DetailRow } from '@syncfusion/ej2-grids';
+import { TreeGrid } from '@syncfusion/ej2-treegrid';
 
-import { GridAppComponent } from './grid-app/grid-app.component';
+import { TreeGridAppComponent } from './grid-app/grid-app.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 
@@ -35,7 +35,7 @@ export class DataService {
 
     public yearTenure: boolean = true;
     public chart!: BarChartComponent;
-    public grid!: GridAppComponent;
+    public treegrid!: TreeGridAppComponent;
     public totalPrincipalYear: number = 0;
     public totalInterestYear: number = 0;
     public inter!: number;
@@ -98,23 +98,7 @@ export class DataService {
     }
 
     public renderControls(): void {
-        this.grid.yearWiseData = this.yearWiseData;
-        this.grid.childGrid = {
-            created: this.grid.childCreated,
-            dataBound: this.grid.childDataBound,
-            queryString: 'year',
-            columns: [
-                { field: 'month', headerText: 'Month', textAlign: 'center', minWidth: '80px' },
-                {
-                    field: 'emi', format: 'C0',
-                    hideAtMedia: '(min-width: 480px)', headerText: 'Payment', minWidth: '80px', textAlign: 'center'
-                },
-                { field: 'pricipalPaid', format: 'C0', headerText: 'Pricipal Paid', minWidth: '80px', textAlign: 'center' },
-                { field: 'interest', format: 'C0', headerText: 'Interest Paid', minWidth: '80px', textAlign: 'center' },
-                { field: 'endingBalance', format: 'C0', headerText: 'Balance', minWidth: '80px', textAlign: 'center' }
-            ],
-            dataSource: this.dataUnits
-        };
+        this.treegrid.yearWiseData = this.yearWiseData;
         this.chart.chartObj.series = [
             // {
             //     type: 'Column',
@@ -207,22 +191,28 @@ export class DataService {
             this.totalPrincipalYear += parseFloat((this.emi - this.inter).toFixed(2));
             this.totalInterestYear += this.inter;
             this.dataUnits.push({
-                month: this.monthNames[this.dateObj.getMonth()],
-                index: (i + 1),
-                totalInterest: Math.round(this.totalInterest),
-                totalAmount: this.totalAmount,
-                emi: Math.round(this.emi),
-                year: this.dateObj.getFullYear(),
-                beginningBalance: Math.round(this.princ),
-                interest: Math.round(this.inter),
-                pricipalPaid: Math.round((this.emi - this.inter)),
-                endingBalance: Math.round(this.endBalance)
+              id: i + 1,
+              month: this.monthNames[this.dateObj.getMonth()],
+              index: i + 1,
+              totalInterest: Math.round(this.totalInterest),
+              totalAmount: this.totalAmount,
+              emi: Math.round(this.emi),
+              year: this.monthNames[this.dateObj.getMonth()],
+              beginningBalance: Math.round(this.princ),
+              interest: Math.round(this.inter),
+              pricipalPaid: Math.round(this.emi - this.inter),
+              endingBalance: Math.round(this.endBalance),
+              parentId: this.dateObj.getFullYear(),
+              yearTotal: Math.round(this.yearTotal),
+              yearPrincipal: this.totalPrincipalYear,
+              yearInterest: this.totalInterestYear,
             });
             if (i === 0 || this.dateObj.getMonth() === 0) {
                 this.beginBalance = this.princ;
             }
             if (this.dateObj.getMonth() === 11 || (i === this.tent - 1)) {
                 this.yearWiseData.push({
+                    id: this.dateObj.getFullYear(),
                     beginningBalance: Math.round(this.beginBalance),
                     totalInterest: Math.round(this.totalInterest),
                     totalPrincipal: Math.round(this.totalPrincipal),
@@ -232,11 +222,14 @@ export class DataService {
                     yearN: new Date(this.dateObj.getFullYear(), 0, 1),
                     year: this.dateObj.getFullYear(),
                     yearPrincipal: this.totalPrincipalYear,
-                    yearInterest: this.totalInterestYear
+                    yearInterest: this.totalInterestYear,
+                    childRecord: this.dataUnits,
+                    parentId: null,
                 });
                 this.yearTotal = 0;
                 this.totalPrincipalYear = 0;
                 this.totalInterestYear = 0;
+                this.dataUnits = [];
             }
             this.princ = this.endBalance;
             if (i < this.tent - 1) {
