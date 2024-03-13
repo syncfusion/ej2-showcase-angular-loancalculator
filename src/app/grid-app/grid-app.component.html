@@ -1,17 +1,17 @@
 <div class="row top-space loan-content max-content">
     <h6 class="center-heading">Amortization Schedule</h6>
-    <ejs-grid #scheduleGrid id='scheduleGrid' [dataSource]='yearWiseData' [childGrid]='childGrid' width="100%" (click)='onClick($event)'>
+    <ejs-treegrid #scheduleGrid id='scheduleGrid' [dataSource]='yearWiseData'  width="100%" childMapping='childRecord' [enableCollapseAll]="true">
         <e-columns>
-            <e-column field='year' headerText='Year' minWidth='80px' textAlign="center">
+            <e-column field='year' headerText='Year/Month' minWidth='80px' textAlign="center"></e-column>
+            <e-column field='yearTotal' headerText='Payment' minWidth='80px' textAlign="center" [format]="format" [hideAtMedia]="paymentHideAtMedia">
                 <ng-template #template let-data>
-                    <div class="e-icons e-icon-grightarrow e-row-toggle"></div>
-                    <span style="padding-left: 12px;">{{data.year}}</span>
+                    <span *ngIf="data.parentItem">{{ data.emi | currency:'':'symbol':'1.0-2' }}</span>
+                    <span *ngIf="!data.parentItem">{{ data.yearTotal | currency:'':'symbol':'1.0-2' }}</span>
                 </ng-template>
             </e-column>
-            <e-column field='yearTotal' headerText='Payment' minWidth='80px' textAlign="center" [format]="format" [hideAtMedia]="paymentHideAtMedia"></e-column>
             <e-column field='yearPrincipal' headerText='Principal Paid' minWidth='80px' textAlign="center" [format]="format"></e-column>           
             <e-column field='yearInterest' headerText='Interest Paid' minWidth='80px' textAlign="center" [format]="format"></e-column>
             <e-column field='endingBalance' headerText='Balance' minWidth='80px' textAlign="center" [format]="format"></e-column>
         </e-columns>
-    </ejs-grid>
+    </ejs-treegrid>
 </div>

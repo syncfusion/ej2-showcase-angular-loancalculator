@@ -903,3 +903,9 @@ body {
 .e-grid .e-icon-grightarrow,.e-grid .e-icon-gdownarrow {
   padding: 0px;
 }
+.e-treegrid .e-treegridexpand:hover::before, .e-treegrid .e-treegridcollapse:hover::before {
+  color: #fff;
+}
+.e-grid.e-default .e-rowcell.e-lastrowcell:not(.e-xlsel-bottom-border) {
+  border-bottom-width: 0px;
+}

@@ -9,7 +9,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ci-publish": "gulp publish-sample"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@syncfusion/ej2-angular-charts": "*",
     "@syncfusion/ej2-angular-grids": "*",
     "@syncfusion/ej2-angular-inputs": "*",
+    "@syncfusion/ej2-angular-treegrid": "*",
     "rxjs": "~7.8.0",
     "tslib": "^2.6.2",
     "zone.js": "~0.12.0"
@@ -35,6 +37,7 @@
     "@angular-devkit/build-angular": "^15.2.6",
     "@angular/cli": "~15.2.6",
     "@angular/compiler-cli": "^15.2.0",
+    "@syncfusion/ej2-showcase-helper": "*",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
